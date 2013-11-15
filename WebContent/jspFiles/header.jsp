@@ -15,13 +15,15 @@
 	<header>
 		<nav>
 			<ul>
+			<!--  
 				<li><a href="Accueil" onclick="parent.document.location.href = this.href;"><s:property value="%{getText('fr.bm.header.accueil')}"/></a></li>
-				
-					<li><a href="About" onclick="parent.document.location.href = this.href;"><s:property value="%{getText('fr.bm.header.apropos')}"/></a></a>
+				-->
+				<li><a href="Accueil" target="_parent"><s:property value="%{getText('fr.bm.header.accueil')}"/></a></li>
+					<li><a href="About" target="_parent"><s:property value="%{getText('fr.bm.header.apropos')}"/></a></a>
 					<ul>
-						<li><a href="About#qui" onclick="parent.document.location.href = this.href;"><s:property value="%{getText('fr.bm.header.qui')}"/></a></li>
-						<li><a href="About#pourquoi" onclick="parent.document.location.href = this.href;"><s:property value="%{getText('fr.bm.header.pourquoi')}"/></a></li>
-						<li><a href="About#pourquoi" onclick="parent.document.location.href = this.href;"><s:property value="%{getText('fr.bm.header.contact')}"/></a></li>
+						<li><a href="About#qui" target="_parent"><s:property value="%{getText('fr.bm.header.qui')}"/></a></li>
+						<li><a href="About#pourquoi" target="_parent"><s:property value="%{getText('fr.bm.header.pourquoi')}"/></a></li>
+						<li><a href="About#contact" target="_parent"><s:property value="%{getText('fr.bm.header.contact')}"/></a></li>
 					</ul></li>
 			</ul>
 		</nav>

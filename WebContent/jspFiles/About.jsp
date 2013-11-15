@@ -12,12 +12,26 @@
 <body>
 
 <header> <iframe id="the_iframe" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation" seamless  " frameborder="0" src="Header"
-		width="100%"  scrolling="no" > </iframe> 
-	
-		
-		
+		width="100%"  scrolling="no" > </iframe> 	
 		</header>
 		
+		<section>
+			<article id="qui">
+			<p>
+
+			
+			</p>
+			</article>
+			<article id="pourquoi">
+			<p>
+			Pourquoi
+			</p>
+			</article>
+			<article id="contact">
+			</article>
+		</section>
+	<footer>
+	</footer>
 
 </body>
 </html>

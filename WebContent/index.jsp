@@ -8,7 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 <title><s:property value="%{getText('fr.bm.index.titre')}"/></title>
-<META HTTP-EQUIV="Refresh" CONTENT="10;Accueil">
+<META HTTP-EQUIV="Refresh" CONTENT="3;Accueil">
 </head>
 
 <body>
