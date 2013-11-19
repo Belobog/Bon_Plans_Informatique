@@ -25,6 +25,7 @@
 						<li><a href="About#pourquoi" target="_parent"><s:property value="%{getText('fr.bm.header.pourquoi')}"/></a></li>
 						<li><a href="About#contact" target="_parent"><s:property value="%{getText('fr.bm.header.contact')}"/></a></li>
 					</ul></li>
+				<li><a href="Inscription" target="_parent"><s:property value="%{getText('fr.bm.header.inscription')}"/></a></li>
 			</ul>
 		</nav>
 	</header>
