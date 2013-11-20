@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC
+"-//OpenSymphony Group//XWork Validator 1.0.2//EN"
+"http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+
+<validators>
+
+	<field name="pseudo">
+		<field-validator type="requiredstring">
+			<message key="fr.bm.inscription.validation.champs_obligatoire" />
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="minLength">6</param>
+			<param name="maxLength">10</param>
+			<message key="fr.bm.inscription.validation.pseudo_incorrect"/>
+		</field-validator>
+		<field-validator type="regex">
+			<param name="expression"><![CDATA[^[_A-Za-z0-9-\+]+$]]></param>
+			<message key="fr.bm.inscription.validation.pseudo_incorrect" />
+		</field-validator>	
+	</field>
+
+	<field name="password">
+		<field-validator type="requiredstring">
+			<message key="fr.bm.inscription.validation.champs_obligatoire" />
+		</field-validator>
+	</field>
+
+	
+
+</validators>
