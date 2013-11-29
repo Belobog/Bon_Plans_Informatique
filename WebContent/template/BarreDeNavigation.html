@@ -1,0 +1,52 @@
+<!-- Barre de navigation Début-->
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target=".navbar-collapse">
+				<span class="sr-only">Toggle navigation</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#"><s:property
+					value="%{getText('fr.bm.header.projet')}" /></a>
+
+
+		</div>
+		<div class="navbar-collapse collapse">
+			<form class="navbar-form navbar-right">
+				<div class="form-group">
+					<input type="text" placeholder="Email" class="form-control">
+				</div>
+				<div class="form-group">
+					<input type="password" placeholder="Password" class="form-control">
+				</div>
+				<button type="submit" class="btn btn-success">Sign in</button>
+			</form>
+			<ul class="nav navbar-nav">
+				<li><a href="Accueil" class="active"><s:property
+							value="%{getText('fr.bm.header.accueil')}" /></a></li>
+				<li><a href="Cours" ><s:property
+							value="%{getText('fr.bm.header.cours')}" /></a></li>
+				<li><a href="Inscription"><s:property
+							value="%{getText('fr.bm.header.inscription')}" /></a></li>
+				<li><a href="Test"><s:property
+							value="%{getText('fr.bm.header.test')}" /></a></li>
+				<li class="dropdown"><a href="About" class="dropdown-toggle"
+					data-toggle="dropdown"><s:property
+							value="%{getText('fr.bm.header.apropos')}" /> <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="About#qui" target="_parent"><s:property
+									value="%{getText('fr.bm.header.qui')}" /></a></li>
+						<li><a href="About#pourquoi" target="_parent"><s:property
+									value="%{getText('fr.bm.header.pourquoi')}" /></a></li>
+						<li><a href="About#contact" target="_parent"><s:property
+									value="%{getText('fr.bm.header.contact')}" /></a></li>
+					</ul></li>
+			</ul>
+
+		</div>
+		<!--/.navbar-collapse -->
+	</div>
+</div>
+<!-- Barre de navigation Fin-->
