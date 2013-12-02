@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre7">
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/java-1.7.0-openjdk-1.7.0.25-2.3.12.4.fc19.x86_64">
 		<attributes>
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
@@ -30,5 +30,6 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/standard.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/struts2-core-2.1.6.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/xwork-2.1.2.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/struts2-bootstrap-plugin-1.4.2.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

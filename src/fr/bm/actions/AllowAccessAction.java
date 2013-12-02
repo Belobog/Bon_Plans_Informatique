@@ -41,6 +41,8 @@ public class AllowAccessAction extends ActionSupport implements SessionAware{
 	public String authentifier(){
 
 		System.out.println("dans la methode authentifer........");
+		System.out.println("Pseudo : "+this.pseudo);
+		System.out.println("Password : "+this.password);
 
 		if(this.pseudo!=null && this.password!=null) 
 			if(this.pseudo.equalsIgnoreCase("struts2") && this.password.equals("struts2")){
@@ -56,7 +58,7 @@ public class AllowAccessAction extends ActionSupport implements SessionAware{
 	}
 
 	public String deconnecter (){
-		System.out.println("dans la méthode deconnecter.......");
+		System.out.println("dans la mï¿½thode deconnecter.......");
 		this.session.clear();
 		return "success";
 
