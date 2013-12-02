@@ -97,46 +97,20 @@
 
 
 		<!-- Example row of columns -->
-		<div class="row">
-			<div class="col-md-4">
+		
 
 
-				<div class="input-group input-group-lg">
-					<span class="input-group-addon"><span
-						class="glyphicon glyphicon-user"></span></span> <input name="inputPseudo"
-						type="text" placeholder="Username" class="form-control"></input>
-				</div>
-				<div class="input-group input-group-lg">
-					<span class="input-group-addon"><span
-						class="glyphicon glyphicon-wrench"></span></span> <input name="inputPassword" type="password"
-						class="form-control" placeholder="Password">
-				</div>
+		<s:form method="post" name="strutsForm"
+			action="authentifier_Utilisateur">
+			<s:textfield name="strutsPseudo"
+				label="%{getText('fr.bm.connexion.pseudo')}">
+			</s:textfield>
 
-				<div class="input-group input-group-lg">
-					<s:form method="post" name="strutsForm" theme="bootstrap"
-						cssClass="navbar-form navbar-right" action="authentifier_Utilisateur">
-						<s:hidden  name="strutsPseudo"
-							label="%{getText('fr.bm.connexion.pseudo')}">
-						</s:hidden>
-						
-						<s:hidden name="strutsPassword"
-							label="%{getText('fr.bm.connexion.password')}">
-						</s:hidden>
-						
-					</s:form>
-				</div>
+			<s:password name="strutsPassword"
+				label="%{getText('fr.bm.connexion.password')}">
+			</s:password>
 
-
-
-				<button type="submit" onclick="test();" class="btn btn-success">Sign
-					in</button>
-
-
-
-
-			</div>
-
-		</div>
+		</s:form>
 		
 		
 		
@@ -158,17 +132,63 @@
 	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script>
-		function test() {
-			var pseudo = $('input[name=inputPseudo]').val();
-			var mot_de_passe = $('input[name=inputPassword]').val();
+		function chargementDeLaPage(){
 			
-			alert(pseudo);
-			alert(mot_de_passe);
-			$('hidden[name=strutPseudo]').val(pseudo);
-			$('hidden[name=strutPassword]').val(mot_de_passe);
+			var pseudo = $('label[for=authentifier_Utilisateur_strutsPseudo]').text();
+			var password = $('label[for=authentifier_Utilisateur_strutsPassword]').text();
+			$('input[name=strutsPseudo]').attr({ "placeholder": pseudo, "class": "form-control"});
+			$('input[name=strutsPassword]').attr({ "placeholder": password, "class": "form-control"});
+								
+			
+			$('input[name=strutsPseudo]').unwrap();
+			$('input[name=strutsPseudo]').unwrap();
+			$('input[name=strutsPseudo]').unwrap();
+			
+			
+			
+			$('input[name=strutsPassword]').unwrap();
+			$('input[name=strutsPassword]').unwrap();
+			$('input[name=strutsPassword]').unwrap();
+			
+			$('td').remove('.tdLabel');
+			
+			
+			$('form[name=strutsForm]').wrap('<div class="row"><div class="col-md-4"></div></div>');
+			
+			$('input[name=strutsPseudo]').wrap('<div class="input-group input-group-lg"></div>');
+			$('input[name=strutsPassword]').wrap('<div class="input-group input-group-lg"></div>');
+			
+			
+			
+			$('input[name=strutsPseudo]').before('<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>');
+			$('input[name=strutsPassword]').before('<span class="input-group-addon"><span class="glyphicon glyphicon-wrench"></span></span>');
+			
+			$('form[name=strutsForm]').after('<button type="submit" onclick="connexion();" class="btn btn-success">Sign in</button>');
+			$('input[name=strutsPseudo]').attr({ "name": "pseudo"});
+			$('input[name=strutsPassword]').attr({ "name": "password"});
+	
+		}
+		function connexion() {
+			alert($('input[name=pseudo]').val());
 			$('form[name=strutsForm]').submit();
 			
+			//var pseudo = $('input[name=inputPseudo]').val();
+			//var mot_de_passe = $('input[name=inputPassword]').val();
+			
+			//var pseudo_label = $('input[name=strutsPseudo]').val();
+			//var mot_de_passe_label = $('input[name=strutsPassword]').val();
+			
+			//alert(pseudo);
+			//alert(mot_de_passe);
+			//$('input[name=strutsPseudo]').val(pseudo);
+			//$('password[name=strutsPassword]').val(mot_de_passe);
+			//$('form[name=strutsForm]').submit();
+			//alert("boom");
+			//alert($('input[name=strutsPseudo]').val());
+			//alert($('input[name=strutsPassword]').val());
+			
 		}
+		chargementDeLaPage();
 	</script>
 </body>
 </html>
