@@ -83,10 +83,7 @@
 				website. It includes a large callout called a jumbotron and three
 				supporting pieces of content. Use it as a starting point to create
 				something more unique.</p>
-			<p>
-				<a class="btn btn-primary btn-lg" role="button">Learn more
-					&raquo;</a>
-			</p>
+
 		</div>
 	</div>
 
@@ -97,23 +94,30 @@
 
 
 		<!-- Example row of columns -->
-		
+
+
 
 
 		<s:form method="post" name="strutsForm"
 			action="authentifier_Utilisateur">
-			<s:textfield name="strutsPseudo"
+			<s:textfield name="pseudo"
 				label="%{getText('fr.bm.connexion.pseudo')}">
 			</s:textfield>
 
-			<s:password name="strutsPassword"
+			<s:password name="password"
 				label="%{getText('fr.bm.connexion.password')}">
 			</s:password>
 
+
+
 		</s:form>
-		
-		
-		
+
+
+
+
+
+
+
 
 
 
@@ -134,58 +138,53 @@
 	<script>
 		function chargementDeLaPage(){
 			
-			var pseudo = $('label[for=authentifier_Utilisateur_strutsPseudo]').text();
-			var password = $('label[for=authentifier_Utilisateur_strutsPassword]').text();
-			$('input[name=strutsPseudo]').attr({ "placeholder": pseudo, "class": "form-control"});
-			$('input[name=strutsPassword]').attr({ "placeholder": password, "class": "form-control"});
-								
+			var pseudo = $('label[for=authentifier_Utilisateur_pseudo]').text();
+			var password = $('label[for=authentifier_Utilisateur_password]').text();
+			$('input[name=pseudo]').attr({ "placeholder": pseudo, "class": "form-control"});
+			$('input[name=password]').attr({ "placeholder": password, "class": "form-control"});
 			
-			$('input[name=strutsPseudo]').unwrap();
-			$('input[name=strutsPseudo]').unwrap();
-			$('input[name=strutsPseudo]').unwrap();
+			$('form[name=strutsForm]').wrap('<div class="row"><div class="col-md-12"></div></div>');
 			
-			
-			
-			$('input[name=strutsPassword]').unwrap();
-			$('input[name=strutsPassword]').unwrap();
-			$('input[name=strutsPassword]').unwrap();
-			
-			$('td').remove('.tdLabel');
-			
-			
-			$('form[name=strutsForm]').wrap('<div class="row"><div class="col-md-4"></div></div>');
-			
-			$('input[name=strutsPseudo]').wrap('<div class="input-group input-group-lg"></div>');
-			$('input[name=strutsPassword]').wrap('<div class="input-group input-group-lg"></div>');
+			$('input[name=pseudo]').wrap('<div class="input-group input-group-lg"></div>');
+			$('input[name=password]').wrap('<div class="input-group input-group-lg"></div>');
 			
 			
 			
-			$('input[name=strutsPseudo]').before('<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>');
-			$('input[name=strutsPassword]').before('<span class="input-group-addon"><span class="glyphicon glyphicon-wrench"></span></span>');
+			$('input[name=pseudo]').before('<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>');
+			$('input[name=password]').before('<span class="input-group-addon"><span class="glyphicon glyphicon-wrench"></span></span>');
 			
-			$('form[name=strutsForm]').after('<button type="submit" onclick="connexion();" class="btn btn-success">Sign in</button>');
-			$('input[name=strutsPseudo]').attr({ "name": "pseudo"});
-			$('input[name=strutsPassword]').attr({ "name": "password"});
-	
+			
+			if( $('tr[errorfor=authentifier_Utilisateur_pseudo]').size()!=0 ){
+				var pseudo_error_texte = $('tr[errorfor=authentifier_Utilisateur_pseudo]').children('td').children('span').text();
+				$('tr[errorfor=authentifier_Utilisateur_pseudo]').remove();
+				$('input[name=pseudo]').after('<span class="input-group-addon">'+pseudo_error_texte+'</span>');
+				
+			}
+			
+			if( $('tr[errorfor=authentifier_Utilisateur_password]').size()!=0 ){
+				var password_error_texte = $('tr[errorfor=authentifier_Utilisateur_password]').children('td').children('span').text();
+				$('tr[errorfor=authentifier_Utilisateur_password]').remove();
+				$('input[name=password]').after('<span class="input-group-addon">'+password_error_texte+'</span>');
+				
+			}
+			
+			
+			
+			
+			$('form[name=strutsForm]').children('table').children('tbody').append('<tr><td><button type="submit" onclick="connexion();" class="btn btn-success">Sign in</button></td></tr>');
+			
+			$('td[class=tdLabel]').remove();
+			
+			var pseudo_error = $('tr[errorfor=authentifier_Utilisateur_pseudo]').text();
+			var password_error = $('tr[errorfor=authentifier_Utilisateur_password]').text();
+			
+			
+
 		}
+		
 		function connexion() {
-			alert($('input[name=pseudo]').val());
+			
 			$('form[name=strutsForm]').submit();
-			
-			//var pseudo = $('input[name=inputPseudo]').val();
-			//var mot_de_passe = $('input[name=inputPassword]').val();
-			
-			//var pseudo_label = $('input[name=strutsPseudo]').val();
-			//var mot_de_passe_label = $('input[name=strutsPassword]').val();
-			
-			//alert(pseudo);
-			//alert(mot_de_passe);
-			//$('input[name=strutsPseudo]').val(pseudo);
-			//$('password[name=strutsPassword]').val(mot_de_passe);
-			//$('form[name=strutsForm]').submit();
-			//alert("boom");
-			//alert($('input[name=strutsPseudo]').val());
-			//alert($('input[name=strutsPassword]').val());
 			
 		}
 		chargementDeLaPage();

@@ -53,7 +53,7 @@ public class AllowAccessAction extends ActionSupport implements SessionAware{
 				return "success";
 			}
 
-		addFieldError("login", getText("developpez.message.authentechouee"));
+		addFieldError("pseudo", getText("fr.bm.connexion.validation.authentechouee"));
 		return "input";
 	}
 
