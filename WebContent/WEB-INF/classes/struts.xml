@@ -41,6 +41,15 @@
 			<result name="input">/jspFiles/Inscription.jsp</result>
 
 		</action>
+		
+		
+		<action name="pseudo_disponible" class="fr.bm.actions.InscriptionAction"
+			method="validerPseudo">
+
+			<result name="success">/jspFiles/Inscription.jsp</result>
+			<result name="input">/jspFiles/Inscription.jsp</result>
+
+		</action>
 
 		<action name="Connexion">
 			<result>/jspFiles/Connexion.jsp</result>

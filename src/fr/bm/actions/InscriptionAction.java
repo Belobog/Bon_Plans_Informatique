@@ -20,9 +20,13 @@ public class InscriptionAction extends ActionSupport{
 	private Utilisateur utilisateur;
 	
 	
-	
+	public String validerPseudo(){
+		System.out.println("validerPseudo");
+		if (pseudo == "struts2")return "success";else return "input";
+	}
 	
 	public String validerInscription(){
+		System.out.println("validerInscription");
 		utilisateur = new Utilisateur();
 		
 		utilisateur.setPseudo(pseudo);
