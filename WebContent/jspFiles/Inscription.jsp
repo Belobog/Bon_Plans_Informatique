@@ -108,7 +108,7 @@
 					<s:textfield  name="adresse" label="%{getText('fr.bm.inscription.adresse')}"> </s:textfield>
 					<s:textfield  name="code_postal" label="%{getText('fr.bm.inscription.code_postal')}"> </s:textfield>
 					<s:textfield  name="ville" label="%{getText('fr.bm.inscription.ville')}"> </s:textfield>
-					<s:submit value = "Envoyer"></s:submit>
+					
 				</s:form>
 
 	</div>
@@ -185,10 +185,9 @@
 		function chargementDeLaPageGenerique() {
 			
 			$('form[name=strutsForm]').children('table').children('tbody').children('tr').each(function(index){
-				//alert( $(this).html() );
-				//console.log( index + ": " + $( this ).children('tr').html().children()[0] );
-				//var param ="";
+				
 				var param = $(this).children('td').children('label').text();
+				var name = $(this).children('td').children('input').attr('name');
 				
 				
 				$(this).children('td').children('input').attr({
@@ -203,18 +202,21 @@
  				$(this)
  				.prepend(
  						'<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>');
+ 				
+ 				
+ 				
 				
-// 				if ($('tr[errorfor=demande_Inscription_pseudo]').size() != 0) {
-// 					alert("dans le if");
-// 					var pseudo_error_texte = $(
-// 							'tr[errorfor=demande_Inscription_pseudo]').children(
-// 							'td').children('span').text();
-// 					$('tr[errorfor=demande_Inscription_pseudo]').remove();
-// 					$('input[id=demande_Inscription_pseudo]').after(
-// 							'<span class="input-group-addon">' + pseudo_error_texte
-// 									+ '</span>');
+				if ($('tr[errorfor=demande_Inscription_'+name+']').size() != 0) {
+					
+					var error_texte = $(
+							'tr[errorfor=demande_Inscription_'+name+']').children(
+							'td').children('span').text();
+					$('tr[errorfor=demande_Inscription_'+name+']').remove();
+					$('input[id=demande_Inscription_'+name+']').after(
+							'<span class="input-group-addon">' + error_texte
+									+ '</span>');
 
-// 				}
+				}
 
 			});
 
@@ -247,6 +249,7 @@
 // 			}
 
 			$('td[class=tdLabel]').remove();
+			$('form[name=strutsForm]').children('table').children('tbody').append('<tr><td><button type="submit" onclick="connexion();" class="btn btn-success">Sign in</button></td></tr>');
 
 		}
 
