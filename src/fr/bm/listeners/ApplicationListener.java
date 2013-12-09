@@ -40,7 +40,7 @@ public class ApplicationListener implements ServletContextListener{
 				System.out.println("Pas de data source pour ce projet");
 			}
 			else{
-				System.out.println("Data source chargée");
+				System.out.println("Data source"+dataSource+" chargée");
 			}
 			servletContext.setAttribute("dataSource", dataSource);
 		} catch (NamingException e) {

@@ -1,10 +1,13 @@
 package fr.bm.actions;
 
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ModelDriven;
+import com.opensymphony.xwork2.Preparable;
 
+import fr.bm.dao.ModeleUtilisateurDAO;
 import fr.bm.modele.Utilisateur;
 
-public class InscriptionAction extends ActionSupport{
+public class InscriptionAction extends ActionSupport implements Preparable,ModelDriven{
 	
 	private String pseudo;
 	private String password;
@@ -39,7 +42,10 @@ public class InscriptionAction extends ActionSupport{
 		utilisateur.setCode_postal(code_postal);
 		utilisateur.setVille(ville);
 		
-		System.out.println(code_postal);
+		
+		
+		ModeleUtilisateurDAO modeleUtilisateurDAO = new ModeleUtilisateurDAO();
+		modeleUtilisateurDAO.ajouterUtilisateur(utilisateur);
 		return "success";
 	}
 
@@ -181,6 +187,18 @@ public class InscriptionAction extends ActionSupport{
 
 	public void setVille(String ville) {
 		this.ville = ville;
+	}
+
+	@Override
+	public Object getModel() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void prepare() throws Exception {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	

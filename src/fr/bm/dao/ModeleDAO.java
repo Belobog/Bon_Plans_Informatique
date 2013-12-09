@@ -18,6 +18,7 @@ public class ModeleDAO implements DAO{
 		ServletContext servletContext = ServletActionContext.getServletContext();
 		if(this.dataSource==null){
 			dataSource = (DataSource) servletContext.getAttribute("dataSource");
+			System.out.println("dataSource vaut "+dataSource);
 		}
 		
 		Connection connection = null;
